@@ -1,0 +1,15 @@
+﻿@using TXTextControl.Web.MVC.DocumentViewer
+@using System.Text
+	       
+<p>Test2</p>
+
+<div style="width: 800px; height: 600px;">
+	    
+@Html.TXTextControl().DocumentViewer(settings => {
+	settings.DocumentData = Convert.ToBase64String(
+	    Encoding.ASCII.GetBytes("<strong>Sample Content</strong>"));
+	settings.Dock = DocumentViewerSettings.DockStyle.Fill;
+	settings.BasePath = "http://localhost:8888";
+}).Render()
+	    
+</div>
